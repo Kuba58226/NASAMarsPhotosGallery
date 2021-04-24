@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>First endpoint</h1>
+    <form>
+        <label for="rover_name">Rover:</label><br>
+        <input type="text" id="rover_name" name="rover_name"><br>
+        <label for="camera_name">Camera:</label><br>
+        <input type="text" id="camera_name" name="camera_name"><br>
+        <label for="date">Date:</label><br>
+        <input type="text" id="date" name="date"><br>
+        <label for="date_from">Date From:</label><br>
+        <input type="text" id="date_from" name="date_from"><br>
+        <label for="date_to">Date To:</label><br>
+        <input type="text" id="date_to" name="date_to"><br>
+    </form>
+    <div>
+        <button id="button" type="button" onclick="handleButtonClick(event)">Search</button>
+    </div>
+    <div id='content' class='container'>
+
+    </div>
+    <h1>Second endpoint</h1>
+    <form>
+        <label for="image_url">Image URL:</label><br>
+        <input type="text" id="image_url" name="image_url"><br>
+        <label for="date2">Date:</label><br>
+        <input type="text" id="date2" name="date2"><br>
+        <label for="rover">Rover:</label><br>
+        <input type="text" id="rover" name="rover"><br>
+        <label for="camera">Camera:</label><br>
+        <input type="text" id="camera" name="camera"><br>
+    </form>
+    <div>
+        <button id="button" type="button" onclick="handleButtonClick1(event)">Search</button>
+    </div>
+    <div id='content2' class='container'>
+
+    </div>
+</body>
+</html>
