@@ -1,11 +1,11 @@
 # NASAMarsPhotosGallery
 
-##Commands:
-###Update polish holidays table:
+## Commands:
+### Update polish holidays table:
 ```php artisan RefreshDates```
-###Update NASA images data based on polish holidays:
+### Update NASA images data based on polish holidays:
 ```php artisan RefreshImages```
-##Installation
+## Installation
 ```cd server```
 ```composer install```
 ```copy .env.example .env```
