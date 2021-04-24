@@ -11,3 +11,4 @@
 - ```copy .env.example .env```
 - In the .env file fill in the DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, and DB_PASSWORD options to match the credentials of the database you just created.
 - ```php artisan migrate```
+- ```php artisan serve```
