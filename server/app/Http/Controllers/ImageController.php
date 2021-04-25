@@ -7,6 +7,7 @@ use App\Models\Holiday;
 use App\Models\Image;
 use Validator;
 use Illuminate\Support\Facades\DB;
+use \GuzzleHttp\Client;
 
 class ImageController extends Controller
 {
@@ -97,21 +98,26 @@ class ImageController extends Controller
 
         $rovers = array('curiosity','opportunity','spirit');
 
+        Image::truncate();
+
         foreach ($dates as $date) {
             foreach ($rovers as $rover) {
                 $url='https://api.nasa.gov/mars-photos/api/v1/rovers/'.$rover.'/photos?earth_date='.$date->date.'&api_key='.$api_key;
-                $client = new \GuzzleHttp\Client();
-                $res = $client->get($url);
-                $content = json_decode($res->getBody());
+                $client = new Client();
+                $response = $client->get($url);
+                $content = json_decode($response->getBody());
 
-                foreach ($content->photos as $photo) {
-                    Image::updateOrCreate([
+                $images = [];
+                foreach($content->photos as $photo) {
+                    array_push($images,[
                         'date' => $photo->earth_date,
                         'img_src' => $photo->img_src,
                         'rover_name' => $photo->rover->name,
                         'camera_name' => $photo->camera->name,
                     ]);
                 }
+
+                Image::insert($images);
             }
         }
     }
