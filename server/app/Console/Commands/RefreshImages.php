@@ -41,6 +41,7 @@ class RefreshImages extends Command
     {
         $controller = new ImageController;
         $controller->refresh();
+        $this->info('Images refreshed successfuly.');
         return 0;
     }
 }

@@ -41,6 +41,7 @@ class RefreshDates extends Command
     {
         $controller = new HolidayController;
         $controller->refresh();
+        $this->info('Holidays refreshed successfuly.');
         return 0;
     }
 }
